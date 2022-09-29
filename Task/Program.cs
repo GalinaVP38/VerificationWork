@@ -4,11 +4,17 @@
 // При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 string [] array = new string [] {"ноль", "один","два", "три", "четыре", "пять", "6"};
 Console.WriteLine("Заданный массив: " +  String.Join(", ", array));
+int count = 0;
 
 Console.WriteLine("Новый массив:");
 for (int i=0; i<array.Length; i++)
 {
     int num = Convert.ToInt32(array[i].Length);
-    if (num<=3) Console.Write(array[i] + " "); 
+    if (num<=3) 
+    {
+        Console.Write(array[i] + " ");
+        count++; 
+    }
 }
+if (count==0) Console.Write("Нет элементов с размером <= 3");
 Console.WriteLine();
